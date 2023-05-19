@@ -1,23 +1,55 @@
-import pg from 'pg';
-import dotenv from 'dotenv';
+import pg from "pg";
+import dotenv from "dotenv";
 
 const { Pool } = pg;
 
 dotenv.config();
 
+// To local config to connection db
+const passwordsLocalConfig = {
+  user: "postgres",
+  password: "",
+  host: "localhost",
+  port: 5432,
+  database: "db_passwords",
+};
 
-const poolPasswordConfig = {
-  connectionString: process.env.DATABASE_PASSWORD_URL, 
-  ssl: false
+const coursesLocalConfig = {
+  user: "postgres",
+  password: "",
+  host: "localhost",
+  port: 5432,
+  database: "db_courses",
 };
-const poolCoursesConfig = { 
-  connectionString: process.env.DATABASE_COURSES_URL, 
-  ssl: false
+
+const usersLocalConfig = {
+  user: "postgres",
+  password: "",
+  host: "localhost",
+  port: 5432,
+  database: "db_users",
 };
-const poolUsersConfig = { 
-  connectionString: process.env.DATABASE_USERS_URL, 
-  ssl: false
-};
+
+const poolPasswordConfig = process.env.DATABASE_PASSWORD_URL
+  ? {
+      connectionString: process.env.DATABASE_PASSWORD_URL,
+      ssl: false,
+    }
+  : passwordsLocalConfig;
+
+const poolCoursesConfig = process.env.DATABASE_COURSES_URL
+  ? {
+      connectionString: process.env.DATABASE_COURSES_URL,
+      ssl: false,
+    }
+  : coursesLocalConfig;
+
+const poolUsersConfig = process.env.DATABASE_USERS_URL
+  ? {
+      connectionString: process.env.DATABASE_USERS_URL,
+      ssl: false,
+    }
+  : usersLocalConfig;
 
 const passwordPool = new Pool(poolPasswordConfig);
 const coursesPool = new Pool(poolCoursesConfig);
