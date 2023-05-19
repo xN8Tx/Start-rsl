@@ -1,0 +1,27 @@
+.comments-form__form {
+  width: calc(100% - 50px);
+}
+
+.comments-form__form_input {
+  width: 100%;
+  padding: 12px 0;
+  
+  border-bottom: var(--border);
+  
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--dark);
+}
+
+.comments-form__form_input::placeholder {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--light-grey);
+}
+

@@ -1,0 +1,14 @@
+.MainSelector {
+  padding: 7px 10px;
+  
+  background: var(--white);
+  box-shadow: var(--shadow);
+  
+  border-radius: 5px;
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 11px;
+  color: var(--grey); 
+}

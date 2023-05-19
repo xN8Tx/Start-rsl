@@ -1,0 +1,7 @@
+.statistic-item {
+  width: 200px;
+  height: 200px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--main-radius);
+}

@@ -1,0 +1,45 @@
+.profile-cover {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  
+  overflow: hidden;
+}
+
+.cover-edit {
+  position: absolute;
+  right: 10%;
+  top: 10px;
+  
+  width: 90px;
+  height: 30px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-family: 'Ubuntu', sans-serif;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  
+  overflow: hidden;
+  
+  border-radius: var(--main-radius);
+  background-color: var(--light-grey);
+  opacity: 0.3;
+  transition: var(--transition);
+}
+
+.cover-edit > input {
+  opacity: 0;
+  position: absolute;
+}
+
+@media (hover: hover) {
+  .cover-edit:hover {
+    opacity: 1;
+    background-color: var(--grey);
+  }
+}

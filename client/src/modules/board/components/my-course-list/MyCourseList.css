@@ -1,0 +1,11 @@
+.board-myCourse__content[data-active="false"] {
+  display: none;
+}
+
+.board-myCourse__content[data-active="true"] {
+  width: 100%;
+  
+  padding: 20px;
+    
+  border-top: var(--border);
+}

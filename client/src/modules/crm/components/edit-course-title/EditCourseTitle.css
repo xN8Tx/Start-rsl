@@ -1,0 +1,5 @@
+.edit-course-from__title {
+  z-index: 2;
+  padding: 20px 10px;
+  background-color: var(--white);
+}

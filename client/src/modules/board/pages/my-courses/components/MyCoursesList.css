@@ -1,0 +1,9 @@
+.myCourses-list__item {
+  width: var(--half-width);
+}
+
+@media (max-width: 1200px) {
+  .myCourses-list__item {
+    width: 100%;
+  }
+}

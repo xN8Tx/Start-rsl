@@ -1,0 +1,12 @@
+.dashboard-todo-item__info_status {
+  width: 24px;
+  height: 24px;
+  
+  border-radius: var(--circle-radius);
+  border: 1px solid var(--purple);
+}
+
+.dashboard-todo-item__info_status[data-status="true"] {
+  background-color: var(--purple);
+  border: none;
+}

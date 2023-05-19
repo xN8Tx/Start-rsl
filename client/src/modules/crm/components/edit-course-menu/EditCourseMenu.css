@@ -1,0 +1,66 @@
+.edit-course-from__material {
+  position: absolute;
+  z-index: 1;
+  
+  top: 0;
+  right: 0;
+  
+  width: 50%;
+  height: 100%;
+  padding: 20px 10px;
+  
+  transition: var(--transition);
+}
+
+.edit-course-from__material__list {
+  width: 100%;
+  overflow-y: scroll;
+}
+.edit-course-from__material[data-active="false"] {
+  transform: translateX(0);
+}
+.edit-course-from__material[data-active="true"] {
+  transform: translateX(100%);
+    
+  border-radius: var(---main-radius);
+  box-shadow: var(--shadow);
+}
+
+.edit-course-from__material[data-active="false"] > p {
+  display: none;
+}
+
+.edit-course-from__material::before {
+  display: block;
+  
+  width: 40px;
+  height: 30px;
+  
+  position: absolute;
+  top: 0;
+  right: -40px;
+  
+  color: var(--white);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: var(--purple);
+  opacity: 1;
+  transition: var(--transition);
+  
+  border-radius: 0 5px 5px 0;
+}
+.edit-course-from__material[data-active="false"]::before {
+  content: '>';
+}
+.edit-course-from__material[data-active="true"]::before {
+  content: '<';
+}
+
+@media (hover: hover) { 
+  .edit-course-from__material:hover::before {
+    background-color: var(--dark-purple);
+  }
+}

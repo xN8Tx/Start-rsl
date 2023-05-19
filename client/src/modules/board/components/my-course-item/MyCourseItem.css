@@ -1,0 +1,21 @@
+.board-myCourse__link {
+  width: 100%;
+}
+
+.board-myCourse__link_left {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--dark);
+}
+
+.board-myCourse__link_right {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 11px;
+  color: var(--grey);
+}

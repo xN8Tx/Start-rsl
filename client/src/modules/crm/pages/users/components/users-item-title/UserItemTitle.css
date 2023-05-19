@@ -1,0 +1,8 @@
+.user-item-title__role {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--purple);
+}

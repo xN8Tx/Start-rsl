@@ -1,0 +1,7 @@
+.HeadingSecond {
+  font-family: 'Ubuntu', sans-serif;
+  color: var(--dark);
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+}

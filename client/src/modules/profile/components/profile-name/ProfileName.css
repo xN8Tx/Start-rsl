@@ -1,0 +1,92 @@
+.profile-title__info {
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.profile-title__title {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.profile-title__title_name {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+  color: var(--dark);
+}
+
+.profile-title__title_info {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.profile-title__title_info > p {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: var(--purple);
+}
+
+.profile-title__title_info > ul > li{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--dark);
+}
+
+.profile-title__buttons_change {
+  padding: 6px 17px;
+  
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--small-radius);
+  
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--dark);
+  
+  transition: var(--transition);
+}
+
+.profile-title__buttons_link > svg > path {
+  transition: var(--transition);
+}
+
+@media (hover: hover) {
+  .profile-title__buttons_change:hover {
+    background: #c6c6c6;
+  }
+  .profile-title__buttons_link:hover > svg > path {
+    stroke: #c6c6c6;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-title__info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .profile-title__title {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-title__title_info {
+    align-items: center;
+  }
+}

@@ -1,0 +1,17 @@
+.MyOption {
+  width: 30px;
+  height: 30px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+  background: var(--white);
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.MyOption[data-type="true"] {
+  background: #c2c2c2;
+}

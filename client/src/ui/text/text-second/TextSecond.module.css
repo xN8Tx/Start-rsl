@@ -1,0 +1,7 @@
+.TxtSecond {
+  font-family: 'Ubuntu', sans-serif;
+  color: var(--grey);
+  font-size: 12px;
+  font-weight: 300;
+  font-style: normal;
+}

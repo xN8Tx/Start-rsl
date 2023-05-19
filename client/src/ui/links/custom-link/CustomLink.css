@@ -1,0 +1,29 @@
+.custom-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #4B4B4B;
+}
+
+.custom-link.active {
+  font-weight: 500;
+  color: #892EE0;
+}
+
+.custom-link.active > svg > path[fill] {
+  fill: #892EE0;
+}
+
+.custom-link.active > svg > path[stroke] {
+  stroke: #892EE0;
+}
+
+.custom-link.active > svg > circle {
+  stroke: #892EE0;
+}

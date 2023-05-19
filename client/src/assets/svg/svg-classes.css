@@ -1,0 +1,9 @@
+.svg {
+  transition: var(--transition);
+}
+
+@media (hover: hover) {
+  .svg:hover > path {
+    stroke: var(--purple) !important;
+  }
+}

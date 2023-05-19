@@ -1,0 +1,72 @@
+.df {
+  display: flex;
+}
+.df-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.df-center {
+  align-items: center;
+  justify-content: center;
+}
+.df-start {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.df-c-sb {
+  align-items: center;
+  justify-content: space-between;
+}
+.df-c-sa {
+  align-items: center;
+  justify-content: space-around;
+}
+.df-c-e {
+  align-items: center;
+  justify-content: flex-end;
+}
+.df-c-s {
+  align-items: center;
+  justify-content: flex-start;
+}
+.df-s-sb {
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.df-e-s {
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.df-wrap {
+  flex-wrap: wrap;
+}
+
+.ob-gap  { gap: var(--outside-big-gap) }
+.o-gap   { gap: var(--outside-gap); }
+.i-gap   { gap: var(--inside-gap); }
+.is-gap  { gap: var(--inside-small-gap); }
+.ixs-gap { gap: var(--inside-xs-gap); }
+
+.w-100  { width: 100%; }
+.h-100  { height: 100%; }
+.wh-100 { width: 100%; height: 100%; }
+.w-50   { width: calc(50% - 20px); }
+
+.my-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.my-img-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.my-avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}

@@ -1,0 +1,13 @@
+{
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "quotes": ["error", "single"],
+    "indent": ["warn", 2],
+    "semi": "error"
+  }
+}

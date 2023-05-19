@@ -1,0 +1,6 @@
+.users-item {
+  padding: 15px 30px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--main-radius);
+}

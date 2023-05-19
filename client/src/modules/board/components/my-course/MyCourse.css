@@ -1,0 +1,14 @@
+.board-myCourse {
+  width: calc(50% - 20px);
+  
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--main-radius);
+  overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+  .board-myCourse{
+    width: 100%;
+  }
+}

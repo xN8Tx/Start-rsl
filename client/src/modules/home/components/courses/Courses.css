@@ -1,0 +1,19 @@
+.home-courses {
+  width: 100%;
+  padding: 100px 0;
+}
+
+.home-courses > .home-wrapper {
+  height: 100%;
+}
+
+.home-courses__heading {
+  text-align: center;
+}
+
+.home-courses__row {
+  width: 100%;
+  padding: 135px 35px;
+  background: var(--yellow);
+  border-radius: 40px;
+}

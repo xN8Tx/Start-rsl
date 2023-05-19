@@ -1,0 +1,16 @@
+.comments-item {
+  width: 70%;
+}
+
+.comments-item__rating_item {
+  gap: 1px;
+}
+
+.comments-item__rating_item.active > p {
+  color: var(--purple);
+}
+
+.comments-item__rating_item.active > svg > path {
+  stroke: var(--purple);
+}
+

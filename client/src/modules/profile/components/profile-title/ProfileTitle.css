@@ -1,0 +1,16 @@
+.profile-title {
+  width: 100%;
+  
+  position: relative;
+  top: -100px;
+  
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@media (max-width: 600px) {
+  .profile-title {
+    align-items: center;
+    justify-content: center;
+  }
+}

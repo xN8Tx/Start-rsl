@@ -1,0 +1,29 @@
+.course-course-small {
+  width: 300px;
+  height: 430px;
+
+  background: var(--white);
+  border-radius: var(--main-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.course-course-small__cover {
+  width: 100%;
+  height: 200px;
+}
+
+.course-course-small__info {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  padding-bottom: 30px;
+}
+
+.course-course-small__info_rating {
+  width: 100%;
+}
+
+.course-course-small__info_rating > p {
+  gap: 2px;
+}

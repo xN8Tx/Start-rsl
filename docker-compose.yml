@@ -1,0 +1,118 @@
+version: "3"
+
+services:
+
+  db-passwords:
+    container_name: db_passwords
+    image: postgres:15-alpine
+    restart: always
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: postgres
+    command: 
+      - "postgres"
+      - "-c"
+      - "port=6101"
+    ports:
+      - 6101:6101
+    volumes:
+      - ./databases/passwords/base:/var/lib/postgresql/data/
+    networks:
+      net:  
+        ipv4_address: 172.19.0.4
+
+  db-users:
+    container_name: db_users
+    image: postgres:15-alpine
+    restart: always
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: postgres
+    command: 
+      - "postgres"
+      - "-c"
+      - "port=6102"
+    ports:
+      - 6102:6102
+    volumes:
+      - ./databases/users/base:/var/lib/postgresql/data/
+    networks:
+      net:  
+        ipv4_address: 172.19.0.5
+
+  db-courses:
+    container_name: db_courses
+    image: postgres:15-alpine
+    restart: always
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: postgres
+    command: 
+      - "postgres"
+      - "-c"
+      - "port=6103"
+    ports:
+      - 6103:6103
+    volumes:
+      - ./databases/courses/base:/var/lib/postgresql/data/
+    networks:
+      net:  
+        ipv4_address: 172.19.0.6
+
+
+  api:
+    container_name: api
+    restart: always
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    volumes:
+      - ./server/assets:/app/assets/
+    depends_on:
+      - db-passwords
+      - db-courses
+      - db-users
+    ports:
+      - 3001:3001
+    networks:
+      net:  
+        ipv4_address: 172.19.0.3
+        
+  client: 
+    container_name: client
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    depends_on:
+      - api
+    ports:
+      - 3000:3000
+    networks:
+      net:  
+        ipv4_address: 172.19.0.2
+
+
+  # pgadmin:
+  #   container_name: pgadmin
+  #   image: dpage/pgadmin4
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: noemail@noemail.com
+  #     PGADMIN_DEFAULT_PASSWORD: root
+  #   ports:
+  #     - 5050:80
+  #   networks:
+  #     net:  
+  #       ipv4_address: 172.19.0.7
+
+
+
+networks:
+  net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "172.19.0.0/24"
+          gateway: "172.19.0.1"

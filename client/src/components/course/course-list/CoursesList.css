@@ -1,0 +1,22 @@
+.courses-courses__list[data-show="false"] {
+  width: 100%;  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.courses-courses__list[data-show="true"] {
+  width: 100%; 
+  
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media (max-width: 669px) {
+  .courses-courses__list[data-show="true"] {
+    width: 100%; 
+    justify-content: center;
+    align-items: center;
+  }
+}

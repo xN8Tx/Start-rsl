@@ -1,0 +1,13 @@
+.dashboard-todo-add {
+  width: 100%;
+  height: 150px;
+}
+
+.dashboard-todo-add > button {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--dark);
+}

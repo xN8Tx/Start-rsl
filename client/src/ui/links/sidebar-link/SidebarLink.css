@@ -1,0 +1,26 @@
+
+.sidebar-link {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--grey);
+}
+
+.sidebar-link.active {
+  font-weight: 500;
+  color: var(--purple);
+}
+
+.sidebar-link.active > svg > path[fill] {
+  fill: var(--purple);
+}
+
+.sidebar-link.active > svg > path[stroke] {
+  stroke: var(--purple);
+}
+
+.sidebar-link.active > svg > circle {
+  stroke: var(--purple);
+}

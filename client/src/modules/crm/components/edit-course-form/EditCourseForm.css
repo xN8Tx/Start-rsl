@@ -1,0 +1,11 @@
+.edit-course-from {
+  position: relative;
+  z-index: 2;
+  
+  max-width: 500px;
+  width: 500px;  
+  min-height: 250px;
+  
+  border-radius: var(---main-radius);
+  box-shadow: var(--shadow);
+}

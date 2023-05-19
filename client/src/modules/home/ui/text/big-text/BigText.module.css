@@ -1,0 +1,14 @@
+.BigText {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 115.5%;
+  color: var(--dark);
+}
+
+@media (max-width: 768px) {
+  .BigText {
+    font-size: 14px;
+  }
+}

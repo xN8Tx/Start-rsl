@@ -1,0 +1,10 @@
+.course-course-big {
+  width: 100%;
+  height: 200px;
+    
+  background: var(--white);
+  border-radius: var(--main-radius);
+  box-shadow: var(--shadow);
+  
+  overflow: hidden;
+}

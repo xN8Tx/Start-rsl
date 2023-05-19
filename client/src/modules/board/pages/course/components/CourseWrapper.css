@@ -1,0 +1,7 @@
+.course-course__wrapper {
+  width: 100%;
+  background: var(--white);
+  border-radius: var(--main-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}

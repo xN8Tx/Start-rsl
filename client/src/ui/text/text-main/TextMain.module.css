@@ -1,0 +1,11 @@
+.TextMain {
+  display: flex;
+  align-items: center;
+  gap: var(--inside-xs-gap);
+  
+  font-family: 'Ubuntu', sans-serif;
+  color: var(--grey);
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+}

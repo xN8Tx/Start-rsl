@@ -1,0 +1,5 @@
+.edit-profile__wrapper {
+  margin: 40px 10%;
+  max-width: 400px;
+  height: calc(100vh - 110px); 
+}

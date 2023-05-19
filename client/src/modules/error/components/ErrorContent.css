@@ -1,0 +1,35 @@
+.error-content {
+  width: 100%;
+  height: calc(100vh - 70px);
+  margin-bottom: 100px;
+}
+
+.error-content__row_text > h1 {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 46px;
+  color: var(--purple);
+}
+
+.error-content__row_text > p {
+  margin-top: 10px;
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: var(--purple);
+}
+.error-content__img {
+  min-width: 300px;
+  min-height: 300px;
+  border-radius: var(--small-radius);
+}
+
+@media (max-width: 933px) {
+  .error-content__row_text {
+    text-align: center;
+  }
+}

@@ -1,0 +1,8 @@
+.dashboard-todo {
+  width: 100%;
+  min-height: 230px;
+  
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--main-radius);
+}

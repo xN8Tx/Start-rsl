@@ -1,0 +1,24 @@
+.edit-course-item {
+  width: 100%;
+  height: 100%;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  padding: 20px 15px;
+  
+  transition: var(--transition);
+  background-color: var(--white);
+  border-radius: var(--main-radius);
+}
+
+.edit-course-item[material-active="true"] {
+  z-index: 2;
+  opacity: 1;
+}
+
+.edit-course-item[material-active="false"] {
+  z-index: 0;
+  opacity: 0;
+}

@@ -1,0 +1,33 @@
+.home-benefits__element {
+  width: 274px;
+  height: 140px;
+  padding: 25px 11px;
+  
+  background-color:var(--white);
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+  
+  transition: var(--transition);
+}
+
+.home-benefits__element__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-benefits__element_heading {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color:var(--purple);
+}
+
+
+@media (hover: hover) {
+  .home-benefits__element:hover {
+    transform: scale(1.1);
+  }
+}

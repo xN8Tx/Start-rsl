@@ -1,0 +1,18 @@
+.ButtonLink {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--white);
+  background-color: var(--purple);
+  border-radius: 20px;
+  padding: 6px 14px;
+  border-color: none;
+  transition: all ease-in 0.3s;
+}
+
+@media (hover: hover) {
+  .ButtonLink:hover {
+    background-color: var(--dark-purple);
+  } 
+}

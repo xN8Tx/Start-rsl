@@ -1,0 +1,45 @@
+.board-header__input[data-active="false"] > .board-header__input_list {
+  display: none;
+}
+
+.board-header__input[data-active="true"] > .board-header__input_list {
+  width: 154px;
+  min-height: 100px;
+  padding: 30px 15px;
+  
+  position: fixed;
+  top: 65px;
+  right: 95px;
+  
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: 10px; 
+}
+
+.board-header__input_list > h4 {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--dark);
+}
+
+.board-header__input_list > ul {
+  gap: 5px;
+}
+
+.board-header__input_list > ul > li > a {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--grey);
+}
+
+@media (hover: hover) {
+  .board-header__input_list > ul > li > a:hover {
+    text-decoration: underline;
+  }
+}

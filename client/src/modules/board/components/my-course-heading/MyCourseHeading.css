@@ -1,0 +1,49 @@
+.board-myCourse__row {
+  width: 100%;
+  height: 114px;
+  
+  padding-right: 20px;
+}
+
+.board-myCourse__item {
+  width: 50%;
+  height: 100%;
+}
+
+.board-myCourse__item_cover {
+  width: 50%;
+  height: 100%;
+}
+
+.board-myCourse__item_status {
+  width: 80px;
+  gap: 3px;
+}
+
+.board-myCourse__up_lines {
+  width: 100%;
+  height: 5px;
+  position: relative;
+}
+
+.board-myCourse__line_first,
+.board-myCourse__line_second {
+  height: 100%;
+  
+  position: absolute;
+  left: 0;
+  top: 0;
+  
+  border-radius: 5px;
+}
+
+.board-myCourse__line_first {
+  width: 100%;
+  background-color: #9D9D9D;
+  z-index: 1;
+}
+
+.board-myCourse__line_second {
+  background-color: #3BFF37;
+  z-index: 2;
+}

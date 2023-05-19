@@ -1,0 +1,9 @@
+.rating-modal__body {
+  width: 300px;
+  height: 200px;
+  
+  background-color: var(--white);
+  border-radius: var(--main-radius);
+  
+  position: relative;
+};

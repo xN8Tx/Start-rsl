@@ -1,0 +1,8 @@
+.TextSmall {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 10px;
+  color: var(--grey);
+}

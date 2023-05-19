@@ -1,0 +1,26 @@
+.player-content {
+  width: 100%;
+  padding: 40px 250px 100px 250px;
+  
+  position: relative;
+  top: 70px;
+}
+
+@media (max-width: 1200px) {
+  .player-content {
+    padding: 40px 25px 100px 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .player-content {
+    padding: 20px 25px 100px 25px;
+    left: 0px;
+  }
+}
+
+@media (max-width: 428px) {
+  .player-content {
+    padding: 20px 10px 100px 10px;
+  }
+}
