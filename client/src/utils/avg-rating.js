@@ -1,9 +1,11 @@
 const avgRating = (rating) => {
-  let avgRating = 0;
-  rating.forEach(element => avgRating += element.rating);
-  avgRating = avgRating / rating.length;
-  
-  return avgRating; 
+  let avgRat = 0;
+  rating.forEach((element) => {
+    avgRat += element.rating;
+  });
+  avgRat /= rating.length;
+
+  return avgRat;
 };
 
 export { avgRating };

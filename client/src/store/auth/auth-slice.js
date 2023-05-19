@@ -1,72 +1,47 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { authLogin, authLogout, authRegistration } from './auth-actions';
 
-const isAuth = localStorage.getItem('access_token') !== null ? true : false;
+const isAuth = localStorage.getItem('access_token') !== null;
 
 const authSlice = createSlice({
   name: '@@auth',
   initialState: {
-    isAuth: isAuth,
+    isAuth,
     loading: 'idle', // 'loading'
-    error: null
+    error: null,
   },
   reducers: {
-    resetAuth: (state, action) => ({
+    resetAuth: () => ({
       isAuth: false,
-      loading: 'idle', 
-      error: null
-    })
+      loading: 'idle',
+      error: null,
+    }),
   },
   extraReducers: (builder) => {
     builder
-      .addCase(authLogin.fulfilled, (state, action) => ({
-        isAuth: true,
-        loading: 'succeeded', 
-        error: null
-      }))
-      .addCase(authLogin.pending, (state, action) => ({
-        isAuth: false,
-        loading: 'loading', 
-        error: null
-      }))
-      .addCase(authLogin.rejected, (state, action) => ({
-        isAuth: false,
-        loading: 'idle', 
-        error: action?.error?.name
-      }))
-      
-      .addCase(authRegistration.fulfilled, (state, action) => ({
-        isAuth: true,
-        loading: 'idle', 
-        error: null
-      }))
-      .addCase(authRegistration.pending, (state, action) => ({
-        isAuth: false,
-        loading: 'loading', 
-        error: null
-      }))
-      .addCase(authRegistration.rejected, (state, action) => ({
-        isAuth: false,
-        loading: 'loading', 
-        error: action?.error?.name
-      }))
-      
-      .addCase(authLogout.fulfilled, (state, action) => ({
-        isAuth: false,
-        loading: 'idle', 
-        error: null
-      }))
-      .addCase(authLogout.pending, (state, action) => ({
-        isAuth: false,
-        loading: 'loading', 
-        error: null
-      }))
-      .addCase(authLogout.rejected, (state, action) => ({
-        isAuth: false,
-        loading: 'loading', 
-        error: action?.error?.name
-      }));
-  }
+      .addCase(authLogin.fulfilled, (state) => {
+        state.isAuth = true;
+        state.loading = 'succeeded';
+        state.error = null;
+      })
+      .addCase(authRegistration.fulfilled, (state) => {
+        state.isAuth = true;
+        state.loading = 'idle';
+        state.error = null;
+      })
+      .addCase(authLogout.fulfilled, (state) => {
+        state.isAuth = false;
+        state.loading = 'idle';
+        state.error = null;
+      })
+      .addMatcher(isAnyOf(authLogin.pending, authRegistration.pending, authLogout.pending), (state) => {
+        state.loading = 'loading';
+      })
+      .addMatcher(isAnyOf(authLogin.rejected, authRegistration.rejected, authLogout.rejected), (state, action) => {
+        state.loading = 'idle';
+        state.error = action?.payload?.error;
+      });
+  },
 });
 
 const { resetAuth } = authSlice.actions;

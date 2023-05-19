@@ -6,7 +6,7 @@ import { levelInfo } from '../../../../../../utils/level-utils';
 import './Level.css';
 
 export default function Level() {
-  const { experience } = useSelector(state => state.myUser.entities);
+  const { experience } = useSelector((state) => state.myUser.entities);
   const { level, progress } = levelInfo(experience);
 
   return (
@@ -17,13 +17,13 @@ export default function Level() {
       <div className="dashboard-level__info df-column i-gap">
         <div className="df df-c-s is-gap">
           <p className="dashboard-level__title_text">Уровень {level}</p>
-          <span className="dashboard-level__title_divider"></span>
+          <span className="dashboard-level__title_divider" />
           <p className="dashboard-level__title_text">{experience} xp</p>
         </div>
         <div className="w-100 df-column i-gap">
           <div className="dashboard-level__line_lines">
-            <span className="line-first"></span>
-            <span className="line-second" style={{width: `${progress}%` }}></span>
+            <span className="line-first" />
+            <span className="line-second" style={{ width: `${progress}%` }} />
           </div>
           <div className="dashboard-level__line_title df df-c-sb">
             <p>Уровень {level}</p>

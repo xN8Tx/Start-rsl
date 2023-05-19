@@ -10,7 +10,7 @@ const usersSlice = createSlice({
     entities: [],
   },
   reducers: {
-    resetUsers: (state, action) => {
+    resetUsers: (state) => {
       state.loading = 'idle';
       state.error = null;
       state.entities = [];
@@ -26,15 +26,15 @@ const usersSlice = createSlice({
       .addCase(deleteUsers.fulfilled, (state, action) => {
         state.loading = 'succeeded';
         state.error = null;
-        state.entities = state.entities.filter(e => e.id !== action.payload.id);
+        state.entities = state.entities.filter((e) => e.id !== action.payload.id);
       })
       .addCase(updateUsers.fulfilled, (state, action) => {
         state.loading = 'succeeded';
         state.error = null;
-        state.entities = state.entities.map(e => e.id === action.payload.id ? action.payload : e);
+        state.entities = state.entities.map((e) => (e.id === action.payload.id ? action.payload : e));
       })
-      
-      .addMatcher(isAnyOf(loadUsers.pending, updateUsers.pending, deleteUsers.pending), (state, action) => {
+
+      .addMatcher(isAnyOf(loadUsers.pending, updateUsers.pending, deleteUsers.pending), (state) => {
         state.loading = 'loading';
         state.error = null;
       })
@@ -42,7 +42,7 @@ const usersSlice = createSlice({
         state.loading = 'idle';
         state.error = action?.error?.name;
       });
-  }
+  },
 });
 
 const { resetUsers } = usersSlice.actions;

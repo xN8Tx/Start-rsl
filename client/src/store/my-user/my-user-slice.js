@@ -1,6 +1,14 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 
-import { loadMyUser, editMyUser, addCourse, changeCourse, addExperience, uploadAvatar, uploadCover } from './my-user-actions';
+import {
+  loadMyUser,
+  editMyUser,
+  addCourse,
+  changeCourse,
+  addExperience,
+  uploadAvatar,
+  uploadCover,
+} from './my-user-actions';
 
 const myUserSlice = createSlice({
   name: '@@my-user',
@@ -11,12 +19,12 @@ const myUserSlice = createSlice({
     error: null,
   },
   reducers: {
-    resetMyUser: (state, action) => {
+    resetMyUser: (state) => {
       state.entities = {};
       state.loaded = false;
       state.loading = 'idle';
       state.error = null;
-    }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -60,19 +68,41 @@ const myUserSlice = createSlice({
         state.loading = 'succeeded';
         state.error = null;
       })
-      
-      .addMatcher(isAnyOf(changeCourse.pending, uploadCover.pending, uploadAvatar.pending, addCourse.pending, editMyUser.pending, loadMyUser.pending, addExperience.pending), (state, action) => {
-        state.loading = 'loading';
-        state.error = null;
-      })
-      .addMatcher(isAnyOf(changeCourse.rejected, uploadCover.rejected, uploadAvatar.rejected, addCourse.rejected, editMyUser.rejected, loadMyUser.rejected, addExperience.rejected), (state, action) => {
-        state.loading = 'ide';
-        state.error = 'error';
-      });
+
+      .addMatcher(
+        isAnyOf(
+          changeCourse.pending,
+          uploadCover.pending,
+          uploadAvatar.pending,
+          addCourse.pending,
+          editMyUser.pending,
+          loadMyUser.pending,
+          addExperience.pending,
+        ),
+        (state) => {
+          state.loading = 'loading';
+          state.error = null;
+        },
+      )
+      .addMatcher(
+        isAnyOf(
+          changeCourse.rejected,
+          uploadCover.rejected,
+          uploadAvatar.rejected,
+          addCourse.rejected,
+          editMyUser.rejected,
+          loadMyUser.rejected,
+          addExperience.rejected,
+        ),
+        (state) => {
+          state.loading = 'ide';
+          state.error = 'error';
+        },
+      );
   },
 });
 
 const { resetMyUser } = myUserSlice.actions;
 const myUserReducer = myUserSlice.reducer;
 
-export { addCourse, myUserReducer, resetMyUser }; 
+export { addCourse, myUserReducer, resetMyUser };

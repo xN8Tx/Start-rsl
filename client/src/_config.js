@@ -5,7 +5,7 @@
 
 const _config = {
   SITE_IP: 'http://localhost:3000/',
-  API_IP: 'http://localhost:3001/api',
+  API_IP: 'http://localhost:8080/api',
 };
 
 export default _config;

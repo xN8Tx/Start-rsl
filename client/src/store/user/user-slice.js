@@ -1,14 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const loadUser = createAsyncThunk(
-  '@@user/load-user',
-  async (id, { extra: $api }) => {
-    const res = await $api.get(`/users/${id}`);
-    const data = res.data.message;
-    
-    return data;
-  }
-);
+const loadUser = createAsyncThunk('@@user/load-user', async (id, { extra: $api }) => {
+  const res = await $api.get(`/users/${id}`);
+  const data = res.data.message;
+
+  return data;
+});
 
 const userSlice = createSlice({
   name: '@@user',
@@ -19,12 +16,12 @@ const userSlice = createSlice({
     error: null,
   },
   reducers: {
-    resetUser: (state, action) => {
+    resetUser: (state) => {
       state.entities = {};
       state.loading = 'idle';
       state.error = null;
       state.loaded = false;
-    } 
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -53,4 +50,4 @@ const userSlice = createSlice({
 const { resetUser } = userSlice.actions;
 const userReducer = userSlice.reducer;
 
-export { loadUser, userReducer, resetUser }; 
+export { loadUser, userReducer, resetUser };

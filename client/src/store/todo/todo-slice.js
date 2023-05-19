@@ -9,11 +9,11 @@ const todoSlice = createSlice({
     error: null,
   },
   reducers: {
-    resetTodo: (state, action) => {
+    resetTodo: (state) => {
       state.entities = [];
       state.loading = 'idle';
       state.error = null;
-    }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -28,27 +28,30 @@ const todoSlice = createSlice({
         state.error = null;
       })
       .addCase(statusTodo.fulfilled, (state, action) => {
-        const index = state.entities.findIndex(t => t.id === action.payload.id);
-        
+        const index = state.entities.findIndex((t) => t.id === action.payload.id);
+
         state.entities[index].status = !state.entities[index].status;
         state.loading = 'succeeded';
         state.error = null;
       })
       .addCase(deleteTodo.fulfilled, (state, action) => {
-        state.entities = state.entities.filter(t => t.id !== action.payload.id);
+        state.entities = state.entities.filter((t) => t.id !== action.payload.id);
         state.loading = 'succeeded';
         state.error = null;
       })
-      
-      .addMatcher(isAnyOf(loadTodo.pending, addTodo.pending, statusTodo.pending, deleteTodo.pending), (state, action) => {
+
+      .addMatcher(isAnyOf(loadTodo.pending, addTodo.pending, statusTodo.pending, deleteTodo.pending), (state) => {
         state.loading = 'loading';
         state.error = null;
       })
-      .addMatcher(isAnyOf(loadTodo.rejected, addTodo.rejected, statusTodo.rejected, deleteTodo.rejected), (state, action) => {
-        state.loading = 'idle';
-        state.error = action.error.message;
-      });
-  }
+      .addMatcher(
+        isAnyOf(loadTodo.rejected, addTodo.rejected, statusTodo.rejected, deleteTodo.rejected),
+        (state, action) => {
+          state.loading = 'idle';
+          state.error = action.error.message;
+        },
+      );
+  },
 });
 
 const { resetTodo } = todoSlice.actions;
